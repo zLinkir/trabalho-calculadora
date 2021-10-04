@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ConversaoUtil {
-	public static void converterDecimalParaBinarios(int decimal) {
+	public static List<Integer> converterDecimalParaBinarios(int decimal) {
 
 		List<Integer> list = new ArrayList<Integer>();
 		while (decimal > 0) {
@@ -13,12 +13,10 @@ public class ConversaoUtil {
 			decimal = decimal / 2;
 		}
 		Collections.reverse(list);
-		for (Integer binario : list) {
-			System.out.print(binario);
-		}
+		return list;
 	}
 
-	public static void converterBinarioParaDecimal(String binario) {
+	public static int converterBinarioParaDecimal(String binario) {
 		int soma = 0;
 		int contador = 0;
 		for (int i = binario.length() - 1; i >= 0; i--) {
@@ -26,7 +24,7 @@ public class ConversaoUtil {
 			contador++;
 		}
 
-		System.out.println(soma);
+return soma;
 	}
 
 }
