@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class funcoes {
+public class conversaoUtil {
 	public static void decimalParaBinarios(int a) {
 	    
 	    List<Integer> list = new ArrayList<Integer>();
