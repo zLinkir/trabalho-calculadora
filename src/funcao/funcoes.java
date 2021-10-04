@@ -18,6 +18,15 @@ public class funcoes {
 	    }
 	}
 	
-
+	public static void binarioParaDecimal(String binario) {
+	    int soma = 0;
+	    int pow  = 0;
+	    for(int i = binario.length() - 1; i >= 0; i--) {
+	    soma = (int) (soma + Math.pow(2, pow) * Character.getNumericValue(binario.charAt(i)));
+	    pow ++;
+	    }
+	    
+	System.out.println(soma);
+	}
 	 
 }
