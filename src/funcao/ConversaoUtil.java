@@ -24,7 +24,7 @@ public class ConversaoUtil {
 			contador++;
 		}
 
-return soma;
+		return soma;
 	}
 
 }
