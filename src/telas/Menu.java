@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
+
+import funcoes.ValidacaoCalculadora;
+
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -13,15 +16,12 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
-import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import java.awt.ComponentOrientation;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import java.awt.Dimension;
-import java.awt.ComponentOrientation;
 
 public class Menu extends JFrame {
 
@@ -79,11 +79,6 @@ public class Menu extends JFrame {
 		panel1.add(btnMultiplicacao);
 		
 		var btnAdicao = new JButton("+");
-		btnAdicao.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		btnAdicao.setForeground(Color.WHITE);
 		btnAdicao.setBackground(Color.DARK_GRAY);
 		btnAdicao.setFont(new Font("Dialog", Font.PLAIN, 20));
@@ -98,6 +93,11 @@ public class Menu extends JFrame {
 		panel1.add(btnSubtracao);
 		
 		JButton btnCalcularResultado = new JButton("=");
+		btnCalcularResultado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.getText();
+			}
+		});
 		btnCalcularResultado.setForeground(Color.WHITE);
 		btnCalcularResultado.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnCalcularResultado.setBackground(SystemColor.activeCaption);
@@ -105,20 +105,38 @@ public class Menu extends JFrame {
 		panel1.add(btnCalcularResultado);
 		
 		JButton btnNum3 = new JButton("3");
+		btnNum3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"3");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum3.setForeground(Color.WHITE);
 		btnNum3.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum3.setBackground(SystemColor.desktop);
 		btnNum3.setBounds(245, 72, 94, 87);
 		panel1.add(btnNum3);
 		
-		JButton btnNum4 = new JButton("4");
-		btnNum4.setForeground(Color.WHITE);
-		btnNum4.setFont(new Font("Dialog", Font.PLAIN, 16));
-		btnNum4.setBackground(SystemColor.desktop);
-		btnNum4.setBounds(143, 165, 93, 87);
-		panel1.add(btnNum4);
+		JButton btnNum5 = new JButton("5");
+		btnNum5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"5");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
+		btnNum5.setForeground(Color.WHITE);
+		btnNum5.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnNum5.setBackground(SystemColor.desktop);
+		btnNum5.setBounds(143, 165, 93, 87);
+		panel1.add(btnNum5);
 		
 		JButton btnNum7 = new JButton("7");
+		btnNum7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"7");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum7.setForeground(Color.WHITE);
 		btnNum7.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum7.setBackground(SystemColor.desktop);
@@ -126,34 +144,64 @@ public class Menu extends JFrame {
 		panel1.add(btnNum7);
 		
 		JButton btnNum9 = new JButton("9");
+		btnNum9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"9");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum9.setForeground(Color.WHITE);
 		btnNum9.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum9.setBackground(SystemColor.desktop);
 		btnNum9.setBounds(245, 258, 94, 87);
 		panel1.add(btnNum9);
 		
-		JButton btnNum5 = new JButton("5");
-		btnNum5.setForeground(Color.WHITE);
-		btnNum5.setFont(new Font("Dialog", Font.PLAIN, 16));
-		btnNum5.setBackground(SystemColor.desktop);
-		btnNum5.setBounds(245, 165, 94, 87);
-		panel1.add(btnNum5);
+		JButton btnNum6 = new JButton("6");
+		btnNum6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"6");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
+		btnNum6.setForeground(Color.WHITE);
+		btnNum6.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnNum6.setBackground(SystemColor.desktop);
+		btnNum6.setBounds(245, 165, 94, 87);
+		panel1.add(btnNum6);
 		
 		JButton btnNum8 = new JButton("8");
+		btnNum8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"8");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum8.setForeground(Color.WHITE);
 		btnNum8.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum8.setBackground(SystemColor.desktop);
 		btnNum8.setBounds(143, 258, 94, 87);
 		panel1.add(btnNum8);
 		
-		JButton btnNum6 = new JButton("6");
-		btnNum6.setForeground(Color.WHITE);
-		btnNum6.setFont(new Font("Dialog", Font.PLAIN, 16));
-		btnNum6.setBackground(SystemColor.desktop);
-		btnNum6.setBounds(39, 165, 94, 87);
-		panel1.add(btnNum6);
+		JButton btnNum4 = new JButton("4");
+		btnNum4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"4");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
+		btnNum4.setForeground(Color.WHITE);
+		btnNum4.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnNum4.setBackground(SystemColor.desktop);
+		btnNum4.setBounds(39, 165, 94, 87);
+		panel1.add(btnNum4);
 		
 		JButton btnNum1 = new JButton("1");
+		btnNum1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"1");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum1.setForeground(Color.WHITE);
 		btnNum1.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum1.setBackground(SystemColor.desktop);
@@ -161,6 +209,12 @@ public class Menu extends JFrame {
 		panel1.add(btnNum1);
 		
 		JButton btnNum2 = new JButton("2");
+		btnNum2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"2");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum2.setForeground(Color.WHITE);
 		btnNum2.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum2.setBackground(SystemColor.desktop);
@@ -181,6 +235,12 @@ public class Menu extends JFrame {
 		lblImagemPergunta.setIcon(new ImageIcon("C:\\Users\\us\\Downloads\\ico_pergunta.png"));
 		
 		JButton btnNum0 = new JButton("0");
+		btnNum0.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tpDigitacao.setText(tpDigitacao.getText()+"0");
+				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+			}
+		});
 		btnNum0.setForeground(Color.WHITE);
 		btnNum0.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum0.setBackground(Color.BLACK);
