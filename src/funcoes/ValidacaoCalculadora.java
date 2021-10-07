@@ -1,5 +1,9 @@
 package funcoes;
 
+import java.math.BigDecimal;
+
+import operacoes.OperacoesMatematicas;
+
 public class ValidacaoCalculadora {
 
 	private ValidacaoCalculadora() {
@@ -26,6 +30,12 @@ public class ValidacaoCalculadora {
 			textoSemZerosIniciaisFormatado = textoSemZerosIniciais + textoSemZerosIniciaisFormatado;
 		}
 		return textoSemZerosIniciaisFormatado; 
+	}
+	
+	public static void verificarAtribuicaoValorAtual(BigDecimal valorAtual) {
+		if(OperacoesMatematicas.getValorAtual() == null) {
+			OperacoesMatematicas.setValorAtual(valorAtual);
+		}
 	}
 	
 }
