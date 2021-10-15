@@ -27,8 +27,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import java.awt.Toolkit;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.JCheckBox;
 
 public class Menu extends JFrame {
 
@@ -259,13 +259,41 @@ public class Menu extends JFrame {
 		btnNum2.setBounds(154, 72, 94, 87);
 		panel1.add(btnNum2);
 
-		JRadioButton rdbEntradaDecimal = new JRadioButton("Decimal");
-		rdbEntradaDecimal.setBounds(449, 72, 109, 23);
-		panel1.add(rdbEntradaDecimal);
-
 		JRadioButton rdbEntradaBinario = new JRadioButton("Bin\u00E1ria");
 		rdbEntradaBinario.setBounds(449, 146, 109, 23);
 		panel1.add(rdbEntradaBinario);
+		
+		JRadioButton rdbEntradaDecimal = new JRadioButton("Decimal");
+		rdbEntradaDecimal.setBounds(449, 72, 109, 23);
+		panel1.add(rdbEntradaDecimal);
+		
+		JRadioButton rdbEntradaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbEntradaHexadecimal.setBounds(449, 107, 109, 23);
+		panel1.add(rdbEntradaHexadecimal);
+		
+		rdbEntradaDecimal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbEntradaDecimal.setSelected(true);
+				rdbEntradaBinario.setSelected(false);
+				rdbEntradaHexadecimal.setSelected(false);
+			}
+		});
+		
+		rdbEntradaHexadecimal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbEntradaDecimal.setSelected(false);
+				rdbEntradaBinario.setSelected(false);
+				rdbEntradaHexadecimal.setSelected(true);
+			}
+		});
+		
+		rdbEntradaBinario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbEntradaDecimal.setSelected(false);
+				rdbEntradaBinario.setSelected(true);
+				rdbEntradaHexadecimal.setSelected(false);
+			}
+		});
 
 		JLabel lblImagemPergunta = new JLabel("");
 		lblImagemPergunta.setBounds(361, 195, 46, 14);
@@ -297,10 +325,6 @@ public class Menu extends JFrame {
 		btnLimpar.setBounds(50, 11, 383, 45);
 		panel1.add(btnLimpar);
 		
-		JRadioButton rdbEntradaHexadecimal_1 = new JRadioButton("Hexadecimal");
-		rdbEntradaHexadecimal_1.setBounds(449, 107, 109, 23);
-		panel1.add(rdbEntradaHexadecimal_1);
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -308,17 +332,41 @@ public class Menu extends JFrame {
 		lblNewLabel.setBounds(474, 182, 57, 53);
 		panel1.add(lblNewLabel);
 		
-		JRadioButton rdbEntradaDecimal_1 = new JRadioButton("Decimal");
-		rdbEntradaDecimal_1.setBounds(449, 248, 109, 23);
-		panel1.add(rdbEntradaDecimal_1);
+		JRadioButton rdbSaidaDecimal = new JRadioButton("Decimal");
+		rdbSaidaDecimal.setBounds(449, 248, 109, 23);
+		panel1.add(rdbSaidaDecimal);
 		
-		JRadioButton rdbEntradaHexadecimal_1_1 = new JRadioButton("Hexadecimal");
-		rdbEntradaHexadecimal_1_1.setBounds(449, 283, 109, 23);
-		panel1.add(rdbEntradaHexadecimal_1_1);
+		JRadioButton rdbSaidaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbSaidaHexadecimal.setBounds(449, 283, 109, 23);
+		panel1.add(rdbSaidaHexadecimal);
 		
-		JRadioButton rdbEntradaBinario_1 = new JRadioButton("Bin\u00E1ria");
-		rdbEntradaBinario_1.setBounds(449, 322, 109, 23);
-		panel1.add(rdbEntradaBinario_1);
+		JRadioButton rdbSaidaBinario = new JRadioButton("Bin\u00E1ria");
+		rdbSaidaBinario.setBounds(449, 322, 109, 23);
+		panel1.add(rdbSaidaBinario);
+		
+		rdbSaidaDecimal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbSaidaDecimal.setSelected(true);
+				rdbSaidaBinario.setSelected(false);
+				rdbSaidaHexadecimal.setSelected(false);
+			}
+		});
+		
+		rdbSaidaHexadecimal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbSaidaDecimal.setSelected(false);
+				rdbSaidaBinario.setSelected(false);
+				rdbSaidaHexadecimal.setSelected(true);
+			}
+		});
+		
+		rdbSaidaBinario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbSaidaDecimal.setSelected(false);
+				rdbSaidaBinario.setSelected(true);
+				rdbSaidaHexadecimal.setSelected(false);
+			}
+		});
 
 		JPanel pVisor = new JPanel();
 		pVisor.setBackground(new Color(38, 38, 38));
