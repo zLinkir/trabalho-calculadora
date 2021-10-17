@@ -56,7 +56,7 @@ public class CalculadoraConversao extends JFrame {
 	 * Create the frame.
 	 */
 	public CalculadoraConversao() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\us\\Documents\\GitHub\\trabalho-calculadora\\src\\imagens\\akatsuki.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(CalculadoraConversao.class.getResource("/imagens/akatsuki.png")));
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 602, 634);
 		contentPane = new JPanel();
