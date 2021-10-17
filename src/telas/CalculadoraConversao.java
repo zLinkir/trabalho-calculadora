@@ -84,11 +84,17 @@ public class CalculadoraConversao extends JFrame {
 			}
 		});
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/itachi9.png")));
-		lblNewLabel_2.setBounds(293, 258, 57, 87);
-		panel1.add(lblNewLabel_2);
+		JLabel lblImgGamakichi = new JLabel("");
+		lblImgGamakichi.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/gamakichi=.png")));
+		lblImgGamakichi.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgGamakichi.setBounds(365, 297, 62, 53);
+		panel1.add(lblImgGamakichi);
+		
+		JLabel lblImgItachi9 = new JLabel("");
+		lblImgItachi9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgItachi9.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/itachi9.png")));
+		lblImgItachi9.setBounds(293, 258, 57, 87);
+		panel1.add(lblImgItachi9);
 		
 		JLabel lblImgKisame8 = new JLabel("");
 		lblImgKisame8.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/kisame8.png")));
