@@ -2,7 +2,7 @@ package operacoes;
 
 import java.math.BigDecimal;
 
-public class OperacoesMatematicas {
+public class OperacoesMatematicasUtil {
 	
 	public static final String SOMA = "SOMA";
 	public static final String SUBTRACAO = "SUBTRACAO";
@@ -24,22 +24,22 @@ public class OperacoesMatematicas {
 	}
 
 	public static void calcular(BigDecimal numeroDigitado) {
-		switch (OperacoesMatematicas.operacao) {
+		switch (OperacoesMatematicasUtil.operacao) {
 		
-		case OperacoesMatematicas.SOMA: {
-			OperacoesMatematicas.somar(numeroDigitado);
+		case OperacoesMatematicasUtil.SOMA: {
+			OperacoesMatematicasUtil.somar(numeroDigitado);
 			break;
 		}
-		case OperacoesMatematicas.SUBTRACAO: {
-			OperacoesMatematicas.subtracao(numeroDigitado);
+		case OperacoesMatematicasUtil.SUBTRACAO: {
+			OperacoesMatematicasUtil.subtracao(numeroDigitado);
 			break;
 		}
-		case OperacoesMatematicas.MULTIPLICACAO: {
-			OperacoesMatematicas.multiplicacao(numeroDigitado);
+		case OperacoesMatematicasUtil.MULTIPLICACAO: {
+			OperacoesMatematicasUtil.multiplicacao(numeroDigitado);
 			break;
 		}
 		default:
-			throw new IllegalArgumentException("Operação inválida: " + OperacoesMatematicas.operacao);
+			throw new IllegalArgumentException("Operação inválida: " + OperacoesMatematicasUtil.operacao);
 		}
 	}
 
@@ -48,7 +48,7 @@ public class OperacoesMatematicas {
 	}
 
 	public static void setValorAtual(BigDecimal valorAtual) {
-		OperacoesMatematicas.valorAtual = valorAtual;
+		OperacoesMatematicasUtil.valorAtual = valorAtual;
 	}
 
 	public static String getOperacao() {
@@ -56,7 +56,11 @@ public class OperacoesMatematicas {
 	}
 
 	public static void setOperacao(String operacao) {
-		OperacoesMatematicas.operacao = operacao;
+		OperacoesMatematicasUtil.operacao = operacao;
 	}
 	
+	private OperacoesMatematicasUtil() {
+		throw new IllegalStateException("Classe Utilitária");
+	}
+
 }

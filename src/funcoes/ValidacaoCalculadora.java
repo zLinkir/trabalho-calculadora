@@ -2,7 +2,7 @@ package funcoes;
 
 import java.math.BigDecimal;
 
-import operacoes.OperacoesMatematicas;
+import operacoes.OperacoesMatematicasUtil;
 
 public class ValidacaoCalculadora {
 
@@ -20,9 +20,12 @@ public class ValidacaoCalculadora {
 		}
 
 		textoSemZerosIniciais = textoSemZerosIniciais.replace(".", "");
+		var textoAuxiliar = new StringBuilder();
+		textoAuxiliar.append(textoSemZerosIniciaisFormatado);
+		
 		while (textoSemZerosIniciais.length() >= 4) {
-			textoSemZerosIniciaisFormatado = "."+textoSemZerosIniciais.substring(textoSemZerosIniciais.length()-3,
-											 textoSemZerosIniciais.length()) + textoSemZerosIniciaisFormatado;
+			textoAuxiliar.insert(0, "."+textoSemZerosIniciais.substring(textoSemZerosIniciais.length()-3,textoSemZerosIniciais.length()) +
+								textoAuxiliar.toString());
 			textoSemZerosIniciais = textoSemZerosIniciais.substring(0,textoSemZerosIniciais.length()-3);
 		}
 		
@@ -33,8 +36,8 @@ public class ValidacaoCalculadora {
 	}
 	
 	public static void verificarAtribuicaoValorAtual(BigDecimal valorAtual) {
-		if(OperacoesMatematicas.getValorAtual() == null) {
-			OperacoesMatematicas.setValorAtual(valorAtual);
+		if(OperacoesMatematicasUtil.getValorAtual() == null) {
+			OperacoesMatematicasUtil.setValorAtual(valorAtual);
 		}
 	}
 	
