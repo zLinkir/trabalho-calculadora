@@ -364,11 +364,6 @@ public class CalculadoraConversao extends JFrame {
 			}
 		});
 
-		var lblImagemPergunta = new JLabel("");
-		lblImagemPergunta.setBounds(361, 195, 46, 14);
-		panel1.add(lblImagemPergunta);
-		lblImagemPergunta.setIcon(new ImageIcon("C:\\Users\\us\\Downloads\\ico_pergunta.png"));
-
 		var btnNum0 = new JButton("0");
 		btnNum0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
