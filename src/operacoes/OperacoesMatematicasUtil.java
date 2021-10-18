@@ -10,8 +10,6 @@ public class OperacoesMatematicasUtil {
 	
 	private static BigDecimal valorAtual = null;  
 	private static String operacao = "";
-	private static String tipoNum1 = "";
-	private static String tipoNum2 = "";
 	
 	private static void somar(BigDecimal numeroDigitado) {
 		valorAtual = valorAtual.add(numeroDigitado);
