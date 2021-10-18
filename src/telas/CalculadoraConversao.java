@@ -93,7 +93,7 @@ public class CalculadoraConversao extends JFrame {
 		JLabel lblImgItachi9 = new JLabel("");
 		lblImgItachi9.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgItachi9.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/itachi9.png")));
-		lblImgItachi9.setBounds(293, 258, 57, 87);
+		lblImgItachi9.setBounds(298, 258, 57, 80);
 		panel1.add(lblImgItachi9);
 		
 		JLabel lblImgKisame8 = new JLabel("");
