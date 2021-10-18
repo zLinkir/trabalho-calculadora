@@ -84,6 +84,11 @@ public class CalculadoraConversao extends JFrame {
 			}
 		});
 		
+		JLabel lblImgPain6 = new JLabel("");
+		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
+		lblImgPain6.setBounds(293, 165, 57, 87);
+		panel1.add(lblImgPain6);
+		
 		JLabel lblImgGamakichi = new JLabel("");
 		lblImgGamakichi.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/gamakichi=.png")));
 		lblImgGamakichi.setHorizontalAlignment(SwingConstants.CENTER);
@@ -105,11 +110,6 @@ public class CalculadoraConversao extends JFrame {
 		lblImgSasori7.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasori7.png")));
 		lblImgSasori7.setBounds(45, 258, 54, 87);
 		panel1.add(lblImgSasori7);
-		
-		JLabel lblImgPain6 = new JLabel("");
-		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
-		lblImgPain6.setBounds(293, 165, 57, 87);
-		panel1.add(lblImgPain6);
 		
 		JLabel lblImgDeidara4 = new JLabel("");
 		lblImgDeidara4.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/deidara4.png")));
