@@ -97,23 +97,27 @@ public class CalculadoraConversao extends JFrame {
 		panel1.add(lblImgItachi9);
 		
 		JLabel lblImgKisame8 = new JLabel("");
+		lblImgKisame8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgKisame8.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/kisame8.png")));
 		lblImgKisame8.setBounds(194, 258, 57, 87);
 		panel1.add(lblImgKisame8);
 		
 		JLabel lblImgSasori7 = new JLabel("");
+		lblImgSasori7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgSasori7.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasori7.png")));
 		lblImgSasori7.setBounds(45, 258, 54, 87);
 		panel1.add(lblImgSasori7);
 		
 		JLabel lblImgPain6 = new JLabel("");
+		lblImgPain6.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
 		lblImgPain6.setBounds(293, 165, 57, 87);
 		panel1.add(lblImgPain6);
 		
 		JLabel lblImgDeidara4 = new JLabel("");
+		lblImgDeidara4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgDeidara4.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/deidara4.png")));
-		lblImgDeidara4.setBounds(90, 165, 54, 87);
+		lblImgDeidara4.setBounds(96, 165, 54, 87);
 		panel1.add(lblImgDeidara4);
 		
 		lblImgKakuzu5 = new JLabel("");
@@ -124,34 +128,40 @@ public class CalculadoraConversao extends JFrame {
 		panel1.add(lblImgKakuzu5);
 		
 		JLabel lblImgKonan3 = new JLabel("");
+		lblImgKonan3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgKonan3.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/konan3.png")));
 		lblImgKonan3.setBounds(254, 72, 57, 87);
 		panel1.add(lblImgKonan3);
 		
 		JLabel lblImgHidan0 = new JLabel("");
+		lblImgHidan0.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgHidan0.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/hidan0.png")));
 		lblImgHidan0.setBounds(153, 352, 57, 80);
 		panel1.add(lblImgHidan0);
 		
 		JLabel lblImgZetsu2 = new JLabel("");
+		lblImgZetsu2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgZetsu2.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/zetsu2.png")));
 		lblImgZetsu2.setBounds(143, 72, 57, 87);
 		panel1.add(lblImgZetsu2);
 		
 		JLabel lblImgObito1 = new JLabel("");
+		lblImgObito1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgObito1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/tobi1.png")));
 		lblImgObito1.setBounds(35, 67, 66, 85);
 		panel1.add(lblImgObito1);
 		
 		JLabel lblImgSakura = new JLabel("");
+		lblImgSakura.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImgSakura.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
 		lblImgSakura.setBounds(390, 11, 32, 45);
 		panel1.add(lblImgSakura);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
-		lblNewLabel_1.setBounds(57, 11, 32, 45);
-		panel1.add(lblNewLabel_1);
+		JLabel lblImgSasuke = new JLabel("");
+		lblImgSasuke.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgSasuke.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
+		lblImgSasuke.setBounds(57, 11, 32, 45);
+		panel1.add(lblImgSasuke);
 		btnMultiplicacao.setForeground(Color.WHITE);
 		btnMultiplicacao.setBackground(Color.DARK_GRAY);
 		btnMultiplicacao.setFont(new Font("Dialog", Font.PLAIN, 16));
@@ -238,6 +248,7 @@ public class CalculadoraConversao extends JFrame {
 		panel1.add(btnNum5);
 
 		var btnNum7 = new JButton("7");
+		btnNum7.setEnabled(true);
 		btnNum7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "7");
@@ -249,7 +260,7 @@ public class CalculadoraConversao extends JFrame {
 		btnNum7.setBackground(SystemColor.desktop);
 		btnNum7.setBounds(50, 258, 94, 87);
 		panel1.add(btnNum7);
-
+		
 		var btnNum9 = new JButton("9");
 		btnNum9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -364,11 +375,6 @@ public class CalculadoraConversao extends JFrame {
 			}
 		});
 
-		var lblImagemPergunta = new JLabel("");
-		lblImagemPergunta.setBounds(361, 195, 46, 14);
-		panel1.add(lblImagemPergunta);
-		lblImagemPergunta.setIcon(new ImageIcon("C:\\Users\\us\\Downloads\\ico_pergunta.png"));
-
 		var btnNum0 = new JButton("0");
 		btnNum0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -394,12 +400,12 @@ public class CalculadoraConversao extends JFrame {
 		btnLimpar.setBounds(50, 11, 383, 45);
 		panel1.add(btnLimpar);
 		
-		var lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/narutinho.png")));
-		lblNewLabel.setBounds(474, 182, 57, 53);
-		panel1.add(lblNewLabel);
+		var lblImgNarutinho = new JLabel("");
+		lblImgNarutinho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgNarutinho.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblImgNarutinho.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/narutinho.png")));
+		lblImgNarutinho.setBounds(474, 182, 57, 53);
+		panel1.add(lblImgNarutinho);
 		
 		var rdbSaidaDecimal = new JRadioButton("Decimal");
 		rdbSaidaDecimal.setBounds(449, 248, 109, 23);
