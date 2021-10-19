@@ -86,16 +86,10 @@ public class CalculadoraConversao extends JFrame {
 			}
 		});
 		
-		JLabel lblImgPain6 = new JLabel("");
-		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
-		lblImgPain6.setBounds(293, 165, 57, 87);
-		panel1.add(lblImgPain6);
-		
-		JLabel lblImgGamakichi = new JLabel("");
-		lblImgGamakichi.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/gamakichi=.png")));
-		lblImgGamakichi.setHorizontalAlignment(SwingConstants.CENTER);
-		lblImgGamakichi.setBounds(365, 297, 62, 53);
-		panel1.add(lblImgGamakichi);
+		JLabel lblImgHidan0 = new JLabel("");
+		lblImgHidan0.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/hidan0.png")));
+		lblImgHidan0.setBounds(153, 352, 57, 80);
+		panel1.add(lblImgHidan0);
 		
 		JLabel lblImgItachi9 = new JLabel("");
 		lblImgItachi9.setHorizontalAlignment(SwingConstants.CENTER);
@@ -113,10 +107,10 @@ public class CalculadoraConversao extends JFrame {
 		lblImgSasori7.setBounds(45, 258, 54, 87);
 		panel1.add(lblImgSasori7);
 		
-		JLabel lblImgDeidara4 = new JLabel("");
-		lblImgDeidara4.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/deidara4.png")));
-		lblImgDeidara4.setBounds(90, 165, 54, 87);
-		panel1.add(lblImgDeidara4);
+		JLabel lblImgPain6 = new JLabel("");
+		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
+		lblImgPain6.setBounds(293, 165, 57, 87);
+		panel1.add(lblImgPain6);
 		
 		lblImgKakuzu5 = new JLabel("");
 		lblImgKakuzu5.setHorizontalAlignment(SwingConstants.CENTER);
@@ -125,25 +119,26 @@ public class CalculadoraConversao extends JFrame {
 		lblImgKakuzu5.setBounds(184, 165, 73, 87);
 		panel1.add(lblImgKakuzu5);
 		
-		JLabel lblImgKonan3 = new JLabel("");
-		lblImgKonan3.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/konan3.png")));
-		lblImgKonan3.setBounds(254, 72, 57, 87);
-		panel1.add(lblImgKonan3);
-		
-		JLabel lblImgHidan0 = new JLabel("");
-		lblImgHidan0.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/hidan0.png")));
-		lblImgHidan0.setBounds(153, 352, 57, 80);
-		panel1.add(lblImgHidan0);
-		
 		JLabel lblImgZetsu2 = new JLabel("");
 		lblImgZetsu2.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/zetsu2.png")));
 		lblImgZetsu2.setBounds(143, 72, 57, 87);
 		panel1.add(lblImgZetsu2);
 		
-		JLabel lblImgObito1 = new JLabel("");
-		lblImgObito1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/tobi1.png")));
-		lblImgObito1.setBounds(35, 67, 66, 85);
-		panel1.add(lblImgObito1);
+		JLabel lblImgKonan3 = new JLabel("");
+		lblImgKonan3.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/konan3.png")));
+		lblImgKonan3.setBounds(254, 72, 57, 87);
+		panel1.add(lblImgKonan3);
+		
+		JLabel lblImgGamakichi = new JLabel("");
+		lblImgGamakichi.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/gamakichi=.png")));
+		lblImgGamakichi.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgGamakichi.setBounds(365, 297, 62, 53);
+		panel1.add(lblImgGamakichi);
+		
+		JLabel lblImgDeidara4 = new JLabel("");
+		lblImgDeidara4.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/deidara4.png")));
+		lblImgDeidara4.setBounds(90, 165, 54, 87);
+		panel1.add(lblImgDeidara4);
 		
 		JLabel lblImgSakura = new JLabel("");
 		lblImgSakura.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
@@ -305,10 +300,11 @@ public class CalculadoraConversao extends JFrame {
 		panel1.add(btnNum4);
 
 		var btnNum1 = new JButton("1");
+		btnNum1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/tobi1.png")));
 		btnNum1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblImgObito1.requestFocus();
+				
 			}
 		});
 		btnNum1.addActionListener(new ActionListener() {
