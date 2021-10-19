@@ -20,6 +20,13 @@ public class OperacoesMatematicasUtil {
 		valorAtual = valorAtual.add(numeroDigitado);
 	}
 
+
+	private static void somar(BigDecimal numeroUm, BigDecimal numeroDois) {
+		numeroUm = numeroUm.add(numeroDois);
+	}
+
+
+	
 	private static void subtracao(BigDecimal numeroDigitado) {
 		valorAtual = valorAtual.subtract(numeroDigitado);
 	}
