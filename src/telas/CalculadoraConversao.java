@@ -28,6 +28,8 @@ import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import java.awt.Toolkit;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CalculadoraConversao extends JFrame {
 
@@ -303,6 +305,12 @@ public class CalculadoraConversao extends JFrame {
 		panel1.add(btnNum4);
 
 		var btnNum1 = new JButton("1");
+		btnNum1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblImgObito1.requestFocus();
+			}
+		});
 		btnNum1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "1");
@@ -389,12 +397,12 @@ public class CalculadoraConversao extends JFrame {
 		btnLimpar.setBounds(50, 11, 383, 45);
 		panel1.add(btnLimpar);
 		
-		var lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/narutinho.png")));
-		lblNewLabel.setBounds(474, 182, 57, 53);
-		panel1.add(lblNewLabel);
+		var lblNarutinho = new JLabel("");
+		lblNarutinho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNarutinho.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblNarutinho.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/narutinho.png")));
+		lblNarutinho.setBounds(474, 182, 57, 53);
+		panel1.add(lblNarutinho);
 		
 		var rdbSaidaDecimal = new JRadioButton("Decimal");
 		rdbSaidaDecimal.setBounds(449, 248, 109, 23);
