@@ -11,7 +11,7 @@ public class ValidacaoCalculadora {
 
 	public static String adicionarPontuacaoMilhar(String textoDigitado) {
 		String textoSemZerosIniciais = textoDigitado;
-		var textoSemZerosIniciaisFormatado = "";
+		var textoAuxiliar = new StringBuilder();
 
 		if (textoDigitado.startsWith("0")) {
 			while (textoSemZerosIniciais.startsWith("0")) {
@@ -20,19 +20,16 @@ public class ValidacaoCalculadora {
 		}
 
 		textoSemZerosIniciais = textoSemZerosIniciais.replace(".", "");
-		var textoAuxiliar = new StringBuilder();
-		textoAuxiliar.append(textoSemZerosIniciaisFormatado);
-		
+
 		while (textoSemZerosIniciais.length() >= 4) {
-			textoAuxiliar.insert(0, "."+textoSemZerosIniciais.substring(textoSemZerosIniciais.length()-3,textoSemZerosIniciais.length()) +
-								textoAuxiliar.toString());
+			textoAuxiliar.insert(0, "."+textoSemZerosIniciais.substring(textoSemZerosIniciais.length()-3,textoSemZerosIniciais.length()));
 			textoSemZerosIniciais = textoSemZerosIniciais.substring(0,textoSemZerosIniciais.length()-3);
 		}
 		
 		if(textoSemZerosIniciais.length() > 0) {
-			textoSemZerosIniciaisFormatado = textoSemZerosIniciais + textoSemZerosIniciaisFormatado;
+			textoAuxiliar.insert(0, textoSemZerosIniciais);
 		}
-		return textoSemZerosIniciaisFormatado; 
+		return textoAuxiliar.toString(); 
 	}
 	
 	public static void verificarAtribuicaoValorAtual(BigDecimal valorAtual) {
