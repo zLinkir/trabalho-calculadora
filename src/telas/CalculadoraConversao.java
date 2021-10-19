@@ -72,7 +72,31 @@ public class CalculadoraConversao extends JFrame {
 		planoFundo.setBounds(0, 130, 710, 465);
 		contentPane.add(planoFundo);
 		planoFundo.setLayout(null);
-
+		
+		var rdbEntradaBinario = new JRadioButton("Bin\u00E1ria");
+		rdbEntradaBinario.setBounds(578, 147, 109, 23);
+		planoFundo.add(rdbEntradaBinario);
+		
+		var rdbEntradaDecimal = new JRadioButton("Decimal");
+		rdbEntradaDecimal.setBounds(578, 73, 109, 23);
+		planoFundo.add(rdbEntradaDecimal);
+		
+		var rdbEntradaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbEntradaHexadecimal.setBounds(578, 108, 109, 23);
+		planoFundo.add(rdbEntradaHexadecimal);
+		
+		var rdbSaidaDecimal = new JRadioButton("Decimal");
+		rdbSaidaDecimal.setBounds(578, 249, 109, 23);
+		planoFundo.add(rdbSaidaDecimal);
+		
+		var rdbSaidaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbSaidaHexadecimal.setBounds(578, 284, 109, 23);
+		planoFundo.add(rdbSaidaHexadecimal);
+		
+		var rdbSaidaBinario = new JRadioButton("Bin\u00E1ria");
+		rdbSaidaBinario.setBounds(578, 323, 109, 23);
+		planoFundo.add(rdbSaidaBinario);
+		
 		var btnMultiplicacao = new JButton("X");
 		btnMultiplicacao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -80,6 +104,7 @@ public class CalculadoraConversao extends JFrame {
 				String valorSemPonto = tpDigitacao.getText().replace(".", "");
 				if(!valorSemPonto.equals("")) {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
+					verificarSelecaoTipoDado(rdbEntradaDecimal, rdbEntradaHexadecimal, true);
 				}
 				tpDigitacao.setText("");
 				planoFundo.requestFocusInWindow();
@@ -98,6 +123,8 @@ public class CalculadoraConversao extends JFrame {
 				String valorSemPonto = tpDigitacao.getText().replace(".", "");
 				if(!valorSemPonto.equals("")) {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
+					verificarSelecaoTipoDado(rdbEntradaDecimal, rdbEntradaHexadecimal, true);
+
 				}
 				tpDigitacao.setText("");
 				planoFundo.requestFocusInWindow();
@@ -116,6 +143,8 @@ public class CalculadoraConversao extends JFrame {
 				String valorSemPonto = tpDigitacao.getText().replace(".", "");
 				if(!valorSemPonto.equals("")) {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
+					verificarSelecaoTipoDado(rdbEntradaDecimal, rdbEntradaHexadecimal, true);
+
 				}
 				tpDigitacao.setText("");
 				planoFundo.requestFocusInWindow();
@@ -299,18 +328,6 @@ public class CalculadoraConversao extends JFrame {
 		btnNum2.setBackground(SystemColor.desktop);
 		btnNum2.setBounds(170, 73, 150, 87);
 		planoFundo.add(btnNum2);
-
-		var rdbEntradaBinario = new JRadioButton("Bin\u00E1ria");
-		rdbEntradaBinario.setBounds(578, 147, 109, 23);
-		planoFundo.add(rdbEntradaBinario);
-		
-		var rdbEntradaDecimal = new JRadioButton("Decimal");
-		rdbEntradaDecimal.setBounds(578, 73, 109, 23);
-		planoFundo.add(rdbEntradaDecimal);
-		
-		var rdbEntradaHexadecimal = new JRadioButton("Hexadecimal");
-		rdbEntradaHexadecimal.setBounds(578, 108, 109, 23);
-		planoFundo.add(rdbEntradaHexadecimal);
 		
 		rdbEntradaDecimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -385,17 +402,6 @@ public class CalculadoraConversao extends JFrame {
 		lblNarutinho.setBounds(603, 183, 57, 53);
 		planoFundo.add(lblNarutinho);
 		
-		var rdbSaidaDecimal = new JRadioButton("Decimal");
-		rdbSaidaDecimal.setBounds(578, 249, 109, 23);
-		planoFundo.add(rdbSaidaDecimal);
-		
-		var rdbSaidaHexadecimal = new JRadioButton("Hexadecimal");
-		rdbSaidaHexadecimal.setBounds(578, 284, 109, 23);
-		planoFundo.add(rdbSaidaHexadecimal);
-		
-		var rdbSaidaBinario = new JRadioButton("Bin\u00E1ria");
-		rdbSaidaBinario.setBounds(578, 323, 109, 23);
-		planoFundo.add(rdbSaidaBinario);
 		
 		rdbSaidaDecimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -454,5 +460,36 @@ public class CalculadoraConversao extends JFrame {
 		btnVoltar.setBackground(Color.BLACK);
 		btnVoltar.setBounds(10, 11, 94, 23);
 		contentPane.add(btnVoltar);
+	}
+	public void verificarSelecaoTipoDado(JRadioButton rdbDecimal, JRadioButton rdbHexadecimal,
+			Boolean numeroTipo) {
+		String tipoDado = "";
+		if (rdbDecimal.isSelected()) {
+			tipoDado = OperacoesMatematicasUtil.DECIMAL;
+		} else if (rdbHexadecimal.isSelected()) {
+			tipoDado = OperacoesMatematicasUtil.HEXADECIMAL;
+		} else {
+			tipoDado= OperacoesMatematicasUtil.BINARIO;
+		}
+		if (numeroTipo) {
+			OperacoesMatematicasUtil.tipoNum1 = tipoDado;
+		}else {
+			OperacoesMatematicasUtil.tipoNum2 = tipoDado;
+		}
+	}
+	public void realizarValidacaoDeConversao() {
+		if(OperacoesMatematicasUtil.tipoNum1.equals(OperacoesMatematicasUtil.tipoNum2)) {
+			switch(OperacoesMatematicasUtil.tipoNum1) {
+			case OperacoesMatematicasUtil.DECIMAL:{
+				
+			}
+			case OperacoesMatematicasUtil.HEXADECIMAL:{
+				
+			}
+			case OperacoesMatematicasUtil.BINARIO:{
+				
+			}
+			}
+		}
 	}
 }
