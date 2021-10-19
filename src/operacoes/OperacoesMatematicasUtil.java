@@ -13,6 +13,8 @@ public class OperacoesMatematicasUtil {
 
 	private static BigDecimal valorAtual = null;  
 	private static String operacao = "";
+	public static String tipoNum1 = "";
+	public static String tipoNum2 = "";
 	
 	private static void somar(BigDecimal numeroDigitado) {
 		valorAtual = valorAtual.add(numeroDigitado);
