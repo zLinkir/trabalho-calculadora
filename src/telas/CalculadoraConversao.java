@@ -73,6 +73,96 @@ public class CalculadoraConversao extends JFrame {
 		contentPane.add(planoFundo);
 		planoFundo.setLayout(null);
 
+
+		JLabel lblImgPain6 = new JLabel("");
+		lblImgPain6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
+		lblImgPain6.setBounds(293, 165, 57, 87);
+		panel1.add(lblImgPain6);
+
+		JLabel lblImgGamakichi = new JLabel("");
+		lblImgGamakichi.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/gamakichi=.png")));
+		lblImgGamakichi.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgGamakichi.setBounds(365, 297, 62, 53);
+		panel1.add(lblImgGamakichi);
+
+		JLabel lblImgItachi9 = new JLabel("");
+		lblImgItachi9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgItachi9.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/itachi9.png")));
+		lblImgItachi9.setBounds(293, 258, 57, 87);
+		panel1.add(lblImgItachi9);
+
+		JLabel lblImgKisame8 = new JLabel("");
+		lblImgKisame8.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/kisame8.png")));
+		lblImgKisame8.setBounds(194, 258, 57, 87);
+		panel1.add(lblImgKisame8);
+
+		JLabel lblImgSasori7 = new JLabel("");
+		lblImgSasori7.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasori7.png")));
+		lblImgSasori7.setBounds(45, 258, 54, 87);
+		panel1.add(lblImgSasori7);
+
+		JLabel lblImgDeidara4 = new JLabel("");
+		lblImgDeidara4.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/deidara4.png")));
+		lblImgDeidara4.setBounds(90, 165, 54, 87);
+		panel1.add(lblImgDeidara4);
+
+		lblImgKakuzu5 = new JLabel("");
+		lblImgKakuzu5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImgKakuzu5.setVerticalAlignment(SwingConstants.CENTER);
+		lblImgKakuzu5.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/kakuzu5.png")));
+		lblImgKakuzu5.setBounds(184, 165, 73, 87);
+		panel1.add(lblImgKakuzu5);
+
+		JLabel lblImgKonan3 = new JLabel("");
+		lblImgKonan3.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/konan3.png")));
+		lblImgKonan3.setBounds(254, 72, 57, 87);
+		panel1.add(lblImgKonan3);
+
+		JLabel lblImgHidan0 = new JLabel("");
+		lblImgHidan0.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/hidan0.png")));
+		lblImgHidan0.setBounds(153, 352, 57, 80);
+		panel1.add(lblImgHidan0);
+
+		JLabel lblImgZetsu2 = new JLabel("");
+		lblImgZetsu2.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/zetsu2.png")));
+		lblImgZetsu2.setBounds(143, 72, 57, 87);
+		panel1.add(lblImgZetsu2);
+
+		JLabel lblImgObito1 = new JLabel("");
+		lblImgObito1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/tobi1.png")));
+		lblImgObito1.setBounds(35, 67, 66, 85);
+		panel1.add(lblImgObito1);
+
+		JLabel lblImgSakura = new JLabel("");
+		lblImgSakura.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
+		lblImgSakura.setBounds(390, 11, 32, 45);
+		panel1.add(lblImgSakura);
+
+		var rdbEntradaBinario = new JRadioButton("Bin\u00E1ria");
+		rdbEntradaBinario.setBounds(449, 146, 109, 23);
+		panel1.add(rdbEntradaBinario);
+
+		var rdbEntradaDecimal = new JRadioButton("Decimal");
+		rdbEntradaDecimal.setBounds(449, 72, 109, 23);
+		panel1.add(rdbEntradaDecimal);
+
+		var rdbEntradaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbEntradaHexadecimal.setBounds(449, 107, 109, 23);
+		panel1.add(rdbEntradaHexadecimal);
+		
+		var rdbSaidaDecimal = new JRadioButton("Decimal");
+		rdbSaidaDecimal.setBounds(449, 248, 109, 23);
+		panel1.add(rdbSaidaDecimal);
+
+		var rdbSaidaHexadecimal = new JRadioButton("Hexadecimal");
+		rdbSaidaHexadecimal.setBounds(449, 283, 109, 23);
+		panel1.add(rdbSaidaHexadecimal);
+
+		var rdbSaidaBinario = new JRadioButton("Bin\u00E1ria");
+		rdbSaidaBinario.setBounds(449, 322, 109, 23);
+		panel1.add(rdbSaidaBinario);
+		
+
 		var btnMultiplicacao = new JButton("X");
 		btnMultiplicacao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,6 +180,26 @@ public class CalculadoraConversao extends JFrame {
 		btnMultiplicacao.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnMultiplicacao.setBounds(493, 183, 73, 53);
 		planoFundo.add(btnMultiplicacao);
+
+
+				if (!valorSemPonto.equals("")) {
+					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
+					verificarSelecaoTipoDado(rdbEntradaDecimal, rdbEntradaHexadecimal, true);
+				}
+				tpDigitacao.setText("");
+			}
+		});
+
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
+		lblNewLabel_1.setBounds(57, 11, 32, 45);
+		panel1.add(lblNewLabel_1);
+		btnMultiplicacao.setForeground(Color.WHITE);
+		btnMultiplicacao.setBackground(Color.DARK_GRAY);
+		btnMultiplicacao.setFont(new Font("Dialog", Font.PLAIN, 16));
+		btnMultiplicacao.setBounds(360, 182, 73, 53);
+		panel1.add(btnMultiplicacao);
+	
 
 		var btnAdicao = new JButton("+");
 		btnAdicao.addActionListener(new ActionListener() {
@@ -116,6 +226,7 @@ public class CalculadoraConversao extends JFrame {
 				String valorSemPonto = tpDigitacao.getText().replace(".", "");
 				if(!valorSemPonto.equals("")) {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
+					verificarSelecaoTipoDado(rdbEntradaDecimal, rdbEntradaHexadecimal, true);
 				}
 				tpDigitacao.setText("");
 				planoFundo.requestFocusInWindow();
@@ -136,6 +247,7 @@ public class CalculadoraConversao extends JFrame {
 					tpDigitacao.setText(String.valueOf(OperacoesMatematicasUtil.getValorAtual()));
 					OperacoesMatematicasUtil.setOperacao("");
 					OperacoesMatematicasUtil.setValorAtual(null);
+					
 				}
 				planoFundo.requestFocusInWindow();
 			}
@@ -455,4 +567,38 @@ public class CalculadoraConversao extends JFrame {
 		btnVoltar.setBounds(10, 11, 94, 23);
 		contentPane.add(btnVoltar);
 	}
+
+
+	public void verificarSelecaoTipoDado(JRadioButton rdbDecimal, JRadioButton rdbHexadecimal,
+			Boolean numeroTipo) {
+		String tipoDado = "";
+		if (rdbDecimal.isSelected()) {
+			tipoDado = OperacoesMatematicasUtil.DECIMAL;
+		} else if (rdbHexadecimal.isSelected()) {
+			tipoDado = OperacoesMatematicasUtil.HEXADECIMAL;
+		} else {
+			tipoDado= OperacoesMatematicasUtil.BINARIO;
+		}
+		if (numeroTipo) {
+			OperacoesMatematicasUtil.tipoNum1 = tipoDado;
+		}else {
+			OperacoesMatematicasUtil.tipoNum2 = tipoDado;
+		}
+	}
+	public void realizarValidacaoDeConversao() {
+		if(OperacoesMatematicasUtil.tipoNum1.equals(OperacoesMatematicasUtil.tipoNum2)) {
+			switch(OperacoesMatematicasUtil.tipoNum1) {
+			case OperacoesMatematicasUtil.DECIMAL:{
+				
+			}
+			case OperacoesMatematicasUtil.HEXADECIMAL:{
+				
+			}
+			case OperacoesMatematicasUtil.BINARIO:{
+				
+			}
+			}
+		}
+	}
+
 }
