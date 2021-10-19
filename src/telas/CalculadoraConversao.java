@@ -163,6 +163,7 @@ public class CalculadoraConversao extends JFrame {
 					String valorSemPonto = tpDigitacao.getText().replace(".", "");
 					OperacoesMatematicasUtil.calcular(new BigDecimal(valorSemPonto));
 					tpDigitacao.setText(String.valueOf(OperacoesMatematicasUtil.getValorAtual()));
+					verificarSelecaoTipoDado(rdbSaidaDecimal, rdbSaidaHexadecimal, false);
 					OperacoesMatematicasUtil.setOperacao("");
 					OperacoesMatematicasUtil.setValorAtual(null);
 				}
