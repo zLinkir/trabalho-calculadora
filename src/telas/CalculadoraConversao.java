@@ -402,7 +402,7 @@ public class CalculadoraConversao extends JFrame {
 
 		var pVisor = new JPanel();
 		pVisor.setBackground(new Color(38, 38, 38));
-		pVisor.setBounds(10, 56, 566, 63);
+		pVisor.setBounds(10, 56, 679, 63);
 		contentPane.add(pVisor);
 		pVisor.setLayout(null);
 		tpDigitacao = new JTextPane();
@@ -416,7 +416,7 @@ public class CalculadoraConversao extends JFrame {
 		tpDigitacao.setForeground(UIManager.getColor("ScrollBar.thumbHighlight"));
 		tpDigitacao.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		tpDigitacao.setBackground(UIManager.getColor("ScrollBar.trackHighlightForeground"));
-		tpDigitacao.setBounds(0, 0, 566, 62);
+		tpDigitacao.setBounds(0, 0, 679, 62);
 		pVisor.add(tpDigitacao);
 		
 		var btnVoltar = new JButton("Voltar");
