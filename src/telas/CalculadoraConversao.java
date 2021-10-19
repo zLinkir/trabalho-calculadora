@@ -67,11 +67,11 @@ public class CalculadoraConversao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		var panel1 = new JPanel();
-		panel1.setBackground(new Color(26, 26, 26));
-		panel1.setBounds(0, 130, 710, 465);
-		contentPane.add(panel1);
-		panel1.setLayout(null);
+		var planoFundo = new JPanel();
+		planoFundo.setBackground(new Color(26, 26, 26));
+		planoFundo.setBounds(0, 130, 710, 465);
+		contentPane.add(planoFundo);
+		planoFundo.setLayout(null);
 
 		var btnMultiplicacao = new JButton("X");
 		btnMultiplicacao.addActionListener(new ActionListener() {
@@ -82,23 +82,14 @@ public class CalculadoraConversao extends JFrame {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
 				}
 				tpDigitacao.setText("");
+				planoFundo.requestFocusInWindow();
 			}
 		});
-		
-		JLabel lblImgSakura = new JLabel("");
-		lblImgSakura.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
-		lblImgSakura.setBounds(390, 11, 32, 45);
-		panel1.add(lblImgSakura);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
-		lblNewLabel_1.setBounds(57, 11, 32, 45);
-		panel1.add(lblNewLabel_1);
 		btnMultiplicacao.setForeground(Color.WHITE);
 		btnMultiplicacao.setBackground(Color.DARK_GRAY);
 		btnMultiplicacao.setFont(new Font("Dialog", Font.PLAIN, 16));
-		btnMultiplicacao.setBounds(497, 183, 73, 53);
-		panel1.add(btnMultiplicacao);
+		btnMultiplicacao.setBounds(493, 183, 73, 53);
+		planoFundo.add(btnMultiplicacao);
 
 		var btnAdicao = new JButton("+");
 		btnAdicao.addActionListener(new ActionListener() {
@@ -109,13 +100,14 @@ public class CalculadoraConversao extends JFrame {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
 				}
 				tpDigitacao.setText("");
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnAdicao.setForeground(Color.WHITE);
 		btnAdicao.setBackground(Color.DARK_GRAY);
 		btnAdicao.setFont(new Font("Dialog", Font.PLAIN, 20));
-		btnAdicao.setBounds(497, 128, 73, 53);
-		panel1.add(btnAdicao);
+		btnAdicao.setBounds(493, 128, 73, 53);
+		planoFundo.add(btnAdicao);
 
 		var btnSubtracao = new JButton("-");
 		btnSubtracao.addActionListener(new ActionListener() {
@@ -126,13 +118,14 @@ public class CalculadoraConversao extends JFrame {
 					ValidacaoCalculadora.verificarAtribuicaoValorAtual(new BigDecimal(valorSemPonto));
 				}
 				tpDigitacao.setText("");
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnSubtracao.setForeground(Color.WHITE);
 		btnSubtracao.setBackground(Color.DARK_GRAY);
 		btnSubtracao.setFont(new Font("Dialog", Font.PLAIN, 20));
-		btnSubtracao.setBounds(497, 73, 73, 53);
-		panel1.add(btnSubtracao);
+		btnSubtracao.setBounds(493, 73, 73, 53);
+		planoFundo.add(btnSubtracao);
 
 		var btnCalcularResultado = new JButton("=");
 		btnCalcularResultado.addActionListener(new ActionListener() {
@@ -144,13 +137,14 @@ public class CalculadoraConversao extends JFrame {
 					OperacoesMatematicasUtil.setOperacao("");
 					OperacoesMatematicasUtil.setValorAtual(null);
 				}
+				planoFundo.requestFocusInWindow();
 			}
 		}); 
 		btnCalcularResultado.setForeground(Color.WHITE);
 		btnCalcularResultado.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnCalcularResultado.setBackground(SystemColor.activeCaption);
-		btnCalcularResultado.setBounds(497, 239, 73, 107);
-		panel1.add(btnCalcularResultado);
+		btnCalcularResultado.setBounds(493, 239, 73, 107);
+		planoFundo.add(btnCalcularResultado);
 
 		var btnNum3 = new JButton("3");
 		btnNum3.setHorizontalAlignment(SwingConstants.LEFT);
@@ -159,14 +153,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "3");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
-				
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum3.setForeground(Color.WHITE);
 		btnNum3.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum3.setBackground(SystemColor.desktop);
 		btnNum3.setBounds(330, 73, 157, 87);
-		panel1.add(btnNum3);
+		planoFundo.add(btnNum3);
 
 		var btnNum5 = new JButton("5");
 		btnNum5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -175,13 +169,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "5");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum5.setForeground(Color.WHITE);
 		btnNum5.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum5.setBackground(SystemColor.desktop);
 		btnNum5.setBounds(170, 166, 150, 87);
-		panel1.add(btnNum5);
+		planoFundo.add(btnNum5);
 
 		var btnNum7 = new JButton("7");
 		btnNum7.setHorizontalAlignment(SwingConstants.LEFT);
@@ -190,13 +185,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "7");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum7.setForeground(Color.WHITE);
 		btnNum7.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum7.setBackground(SystemColor.desktop);
 		btnNum7.setBounds(10, 259, 150, 87);
-		panel1.add(btnNum7);
+		planoFundo.add(btnNum7);
 
 		var btnNum9 = new JButton("9");
 		btnNum9.setHorizontalAlignment(SwingConstants.LEFT);
@@ -205,13 +201,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "9");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum9.setForeground(Color.WHITE);
 		btnNum9.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum9.setBackground(SystemColor.desktop);
 		btnNum9.setBounds(330, 259, 157, 87);
-		panel1.add(btnNum9);
+		planoFundo.add(btnNum9);
 
 		var btnNum6 = new JButton("6");
 		btnNum6.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/pain6.png")));
@@ -220,13 +217,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "6");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum6.setForeground(Color.WHITE);
 		btnNum6.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum6.setBackground(SystemColor.desktop);
 		btnNum6.setBounds(330, 166, 157, 87);
-		panel1.add(btnNum6);
+		planoFundo.add(btnNum6);
 
 		var btnNum8 = new JButton("8");
 		btnNum8.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/kisame8.png")));
@@ -235,13 +233,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "8");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum8.setForeground(Color.WHITE);
 		btnNum8.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum8.setBackground(SystemColor.desktop);
 		btnNum8.setBounds(170, 259, 150, 87);
-		panel1.add(btnNum8);
+		planoFundo.add(btnNum8);
 
 		var btnNum4 = new JButton("4");
 		btnNum4.setHorizontalAlignment(SwingConstants.LEFT);
@@ -250,13 +249,14 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "4");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum4.setForeground(Color.WHITE);
 		btnNum4.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum4.setBackground(SystemColor.desktop);
 		btnNum4.setBounds(10, 166, 150, 87);
-		panel1.add(btnNum4);
+		planoFundo.add(btnNum4);
 
 		var btnNum1 = new JButton("1");
 		btnNum1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -264,20 +264,25 @@ public class CalculadoraConversao extends JFrame {
 		btnNum1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				
+				btnNum1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/fotoBranco.png")));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnNum1.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/tobi1.png")));
 			}
 		});
 		btnNum1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "1");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow(); 
 			}
 		});
 		btnNum1.setForeground(Color.WHITE);
 		btnNum1.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum1.setBackground(SystemColor.desktop);
 		btnNum1.setBounds(10, 73, 150, 87);
-		panel1.add(btnNum1);
+		planoFundo.add(btnNum1);
 
 		var btnNum2 = new JButton("2");
 		btnNum2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -286,25 +291,26 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "2");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum2.setForeground(Color.WHITE);
 		btnNum2.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum2.setBackground(SystemColor.desktop);
 		btnNum2.setBounds(170, 73, 150, 87);
-		panel1.add(btnNum2);
+		planoFundo.add(btnNum2);
 
 		var rdbEntradaBinario = new JRadioButton("Bin\u00E1ria");
-		rdbEntradaBinario.setBounds(576, 147, 109, 23);
-		panel1.add(rdbEntradaBinario);
+		rdbEntradaBinario.setBounds(578, 147, 109, 23);
+		planoFundo.add(rdbEntradaBinario);
 		
 		var rdbEntradaDecimal = new JRadioButton("Decimal");
-		rdbEntradaDecimal.setBounds(576, 73, 109, 23);
-		panel1.add(rdbEntradaDecimal);
+		rdbEntradaDecimal.setBounds(578, 73, 109, 23);
+		planoFundo.add(rdbEntradaDecimal);
 		
 		var rdbEntradaHexadecimal = new JRadioButton("Hexadecimal");
-		rdbEntradaHexadecimal.setBounds(576, 108, 109, 23);
-		panel1.add(rdbEntradaHexadecimal);
+		rdbEntradaHexadecimal.setBounds(578, 108, 109, 23);
+		planoFundo.add(rdbEntradaHexadecimal);
 		
 		rdbEntradaDecimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -337,44 +343,59 @@ public class CalculadoraConversao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText(tpDigitacao.getText() + "0");
 				tpDigitacao.setText(ValidacaoCalculadora.adicionarPontuacaoMilhar(tpDigitacao.getText()));
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnNum0.setForeground(Color.WHITE);
 		btnNum0.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnNum0.setBackground(Color.BLACK);
 		btnNum0.setBounds(170, 353, 150, 87);
-		panel1.add(btnNum0);
+		planoFundo.add(btnNum0);
 
 		var btnLimpar = new JButton("Limpar");
+		btnLimpar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnLimpar.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnLimpar.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
+			}
+		});
+		btnLimpar.setSelectedIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sakura.png")));
+		btnLimpar.setHorizontalAlignment(SwingConstants.LEFT);
+		btnLimpar.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/sasuke.png")));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tpDigitacao.setText("");
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnLimpar.setForeground(Color.WHITE);
 		btnLimpar.setFont(new Font("Dialog", Font.PLAIN, 16));
 		btnLimpar.setBackground(Color.BLACK);
-		btnLimpar.setBounds(10, 11, 560, 45);
-		panel1.add(btnLimpar);
+		btnLimpar.setBounds(10, 11, 477, 53);
+		planoFundo.add(btnLimpar);
 		
 		var lblNarutinho = new JLabel("");
 		lblNarutinho.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNarutinho.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNarutinho.setIcon(new ImageIcon(CalculadoraConversao.class.getResource("/imagens/narutinho.png")));
-		lblNarutinho.setBounds(601, 183, 57, 53);
-		panel1.add(lblNarutinho);
+		lblNarutinho.setBounds(603, 183, 57, 53);
+		planoFundo.add(lblNarutinho);
 		
 		var rdbSaidaDecimal = new JRadioButton("Decimal");
-		rdbSaidaDecimal.setBounds(576, 249, 109, 23);
-		panel1.add(rdbSaidaDecimal);
+		rdbSaidaDecimal.setBounds(578, 249, 109, 23);
+		planoFundo.add(rdbSaidaDecimal);
 		
 		var rdbSaidaHexadecimal = new JRadioButton("Hexadecimal");
-		rdbSaidaHexadecimal.setBounds(576, 284, 109, 23);
-		panel1.add(rdbSaidaHexadecimal);
+		rdbSaidaHexadecimal.setBounds(578, 284, 109, 23);
+		planoFundo.add(rdbSaidaHexadecimal);
 		
 		var rdbSaidaBinario = new JRadioButton("Bin\u00E1ria");
-		rdbSaidaBinario.setBounds(576, 323, 109, 23);
-		panel1.add(rdbSaidaBinario);
+		rdbSaidaBinario.setBounds(578, 323, 109, 23);
+		planoFundo.add(rdbSaidaBinario);
 		
 		rdbSaidaDecimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -425,6 +446,7 @@ public class CalculadoraConversao extends JFrame {
 				var menu = new Menu();
 				menu.setVisible(true);
 				setVisible(false);
+				planoFundo.requestFocusInWindow();
 			}
 		});
 		btnVoltar.setForeground(Color.WHITE);
